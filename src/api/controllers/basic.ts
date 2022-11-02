@@ -1,13 +1,9 @@
-import { Router } from 'express';
+import express, { Router } from 'express';
+import path from 'path';
 
 const basic = Router();
+const staticRootPath = path.join(__dirname, '../../../public');
 
-basic.get('', (req, res) => { 
-  res.send('Root page')
-})
-
-basic.get('/details', (req, res) => { 
-  res.send('Details page')
-})
+basic.use(express.static(staticRootPath))
 
 export default basic;
