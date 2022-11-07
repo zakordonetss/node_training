@@ -3,9 +3,9 @@ import { Router } from 'express'
 const help = Router();
 
 help.get('', (req, res) => { 
-  res.send({
+  res.render('help', {
     title: 'Help',
-    type: 'page'
+    type: 'Dynamic page'
   })
 });
 

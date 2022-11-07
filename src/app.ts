@@ -14,6 +14,7 @@ export class App {
   private _initExpress(): void {
     express()
       .use(router)
+      .set('view engine', 'hbs')
       .listen(PORT, () => { console.log(`The app started listening in port: ${PORT}`); })
   }
 }
